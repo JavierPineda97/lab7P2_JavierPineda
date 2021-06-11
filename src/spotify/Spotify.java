@@ -5,6 +5,8 @@
  */
 package spotify;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dell
@@ -28,7 +30,218 @@ public class Spotify extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        lblNuevoArtista = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblGenero = new javax.swing.JLabel();
+        txtNombreArtista = new javax.swing.JTextField();
+        txtGeneroArtista = new javax.swing.JTextField();
+        vtnGuardarNuevoArtista = new javax.swing.JButton();
+        lblDisquera = new javax.swing.JLabel();
+        lblAlias = new javax.swing.JLabel();
+        lblRegistro = new javax.swing.JLabel();
+        txtDisqueraArtista = new javax.swing.JTextField();
+        txtAliasArtista = new javax.swing.JTextField();
+        txtRegistoArtista = new javax.swing.JTextField();
+        jDialog2 = new javax.swing.JDialog();
+        lblNuevoAlbum = new javax.swing.JLabel();
+        lblNombreAlbum = new javax.swing.JLabel();
+        lblFechaAlbum = new javax.swing.JLabel();
+        lblGeneroAlbum = new javax.swing.JLabel();
+        lblFormato = new javax.swing.JLabel();
+        lblAliasProductor = new javax.swing.JLabel();
+        txtNombreAlbum = new javax.swing.JTextField();
+        txtFechaAlbum = new javax.swing.JTextField();
+        txtGeneroAlbum = new javax.swing.JTextField();
+        txtAliasProdAlbum = new javax.swing.JTextField();
+        btnGuardarAlbum = new javax.swing.JButton();
+        txtFormatoPublicacion = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        menItemNuevoalbum = new javax.swing.JMenuItem();
+        menItemNuevoAlbum = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+
+        lblNuevoArtista.setText("Nuevo Artista");
+
+        lblNombre.setText("Nombre:");
+
+        lblGenero.setText("Genero Musical:");
+
+        vtnGuardarNuevoArtista.setText("Guardar");
+        vtnGuardarNuevoArtista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vtnGuardarNuevoArtistaMouseClicked(evt);
+            }
+        });
+
+        lblDisquera.setText("Nombre de Disquera:");
+
+        lblAlias.setText("Alias:");
+
+        lblRegistro.setText("Registro:");
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGap(287, 287, 287)
+                        .addComponent(lblNuevoArtista))
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(vtnGuardarNuevoArtista))
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDialog1Layout.createSequentialGroup()
+                                .addComponent(lblRegistro)
+                                .addGap(77, 77, 77)
+                                .addComponent(txtRegistoArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDialog1Layout.createSequentialGroup()
+                                    .addComponent(lblDisquera)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtDisqueraArtista))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDialog1Layout.createSequentialGroup()
+                                    .addComponent(lblGenero)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtGeneroArtista))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDialog1Layout.createSequentialGroup()
+                                    .addComponent(lblNombre)
+                                    .addGap(49, 49, 49)
+                                    .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jDialog1Layout.createSequentialGroup()
+                                .addComponent(lblAlias)
+                                .addGap(76, 76, 76)
+                                .addComponent(txtAliasArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(347, Short.MAX_VALUE))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(lblNuevoArtista)
+                .addGap(44, 44, 44)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombre)
+                    .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblGenero)
+                    .addComponent(txtGeneroArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDisquera)
+                    .addComponent(txtDisqueraArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addComponent(lblAlias)
+                        .addGap(182, 182, 182)
+                        .addComponent(vtnGuardarNuevoArtista))
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addComponent(txtAliasArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtRegistoArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblRegistro))))
+                .addContainerGap(119, Short.MAX_VALUE))
+        );
+
+        lblNuevoAlbum.setText("Nuevo Album");
+
+        lblNombreAlbum.setText("Nombre:");
+
+        lblFechaAlbum.setText("Fecha de publicacion:");
+
+        lblGeneroAlbum.setText("Genero:");
+
+        lblFormato.setText("Formato de publicacion:");
+
+        lblAliasProductor.setText("Alias del productor:");
+
+        btnGuardarAlbum.setText("jButton1");
+        btnGuardarAlbum.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGuardarAlbumMouseClicked(evt);
+            }
+        });
+
+        txtFormatoPublicacion.setText("jTextField1");
+        txtFormatoPublicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFormatoPublicacionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
+        jDialog2.getContentPane().setLayout(jDialog2Layout);
+        jDialog2Layout.setHorizontalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog2Layout.createSequentialGroup()
+                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog2Layout.createSequentialGroup()
+                        .addGap(375, 375, 375)
+                        .addComponent(lblNuevoAlbum))
+                    .addGroup(jDialog2Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblFechaAlbum)
+                            .addComponent(lblNombreAlbum)
+                            .addComponent(lblGeneroAlbum)
+                            .addComponent(lblFormato)
+                            .addComponent(lblAliasProductor))
+                        .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDialog2Layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtFechaAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNombreAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtGeneroAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtAliasProdAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDialog2Layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(txtFormatoPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jDialog2Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(btnGuardarAlbum)))
+                .addContainerGap(475, Short.MAX_VALUE))
+        );
+        jDialog2Layout.setVerticalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog2Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(lblNuevoAlbum)
+                .addGap(62, 62, 62)
+                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNombreAlbum)
+                    .addComponent(txtNombreAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFechaAlbum)
+                    .addComponent(txtFechaAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGeneroAlbum)
+                    .addComponent(txtGeneroAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63)
+                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFormato)
+                    .addComponent(txtFormatoPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69)
+                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAliasProductor)
+                    .addComponent(txtAliasProdAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(107, 107, 107)
+                .addComponent(btnGuardarAlbum)
+                .addContainerGap(159, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Spotify");
@@ -36,25 +249,114 @@ public class Spotify extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Reproductor");
 
+        jMenu1.setText("Nuevo");
+
+        menItemNuevoalbum.setText("Nuevo Artista");
+        menItemNuevoalbum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemNuevoalbumActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menItemNuevoalbum);
+
+        menItemNuevoAlbum.setText("Nuevo Album");
+        menItemNuevoAlbum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemNuevoAlbumActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menItemNuevoAlbum);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Listar");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(341, 341, 341)
+                .addGap(338, 338, 338)
                 .addComponent(jLabel1)
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(399, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addContainerGap(557, Short.MAX_VALUE))
+                .addContainerGap(564, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void vtnGuardarNuevoArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vtnGuardarNuevoArtistaMouseClicked
+        // TODO add your handling code here:
+        Artistas a = new Artistas(txtNombreArtista.getText(),txtGeneroArtista.getText(),txtDisqueraArtista.getText(),txtAliasArtista.getText(),txtRegistoArtista.getText());
+        
+        String op="s";
+        int cant=-1;
+        
+         while (op.equals("s")) {
+            a.getCanciones().add(
+                    new Canciones(
+                            JOptionPane.showInputDialog("Nombre cancion"),
+                            cant )
+            );
+            cant++;
+            op = JOptionPane.showInputDialog(
+                    "Desea continuar s/n");
+        }
+        adminArtistas aa = new adminArtistas("./artistas.cbm");
+        aa.cargarArchivo();
+        aa.setArtista(a);
+        aa.escribirArchivo();
+        JOptionPane.showMessageDialog(this,
+                "Artista guardado exitosamente");
+    }//GEN-LAST:event_vtnGuardarNuevoArtistaMouseClicked
+
+    private void btnGuardarAlbumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarAlbumMouseClicked
+        // TODO add your handling code here:
+        Albums al = new Albums(txtNombreAlbum.getText(),txtFechaAlbum.getText(),txtGeneroAlbum.getText(),txtFormatoPublicacion.getText(),txtAliasProdAlbum.getText());
+        
+        String op="s";
+        int cant=-1;
+        
+         while (op.equals("s")) {
+            al.getCanciones().add(
+                    new Canciones(
+                            JOptionPane.showInputDialog("Nombre cancion"),
+                            cant )
+            );
+            cant++;
+            op = JOptionPane.showInputDialog(
+                    "Desea continuar s/n");
+        }
+        AdminAlbums aal = new AdminAlbums("./albums.cbm");
+        aal.cargarArchivo();
+        aal.setAlbums(al);
+        aal.escribirArchivo();
+        JOptionPane.showMessageDialog(this,
+                "Album guardado exitosamente");
+    }//GEN-LAST:event_btnGuardarAlbumMouseClicked
+
+    private void txtFormatoPublicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFormatoPublicacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFormatoPublicacionActionPerformed
+
+    private void menItemNuevoalbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemNuevoalbumActionPerformed
+        // TODO add your handling code here:
+        abreVentana();
+    }//GEN-LAST:event_menItemNuevoalbumActionPerformed
+
+    private void menItemNuevoAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemNuevoAlbumActionPerformed
+        // TODO add your handling code here:
+        abreVentana2();
+    }//GEN-LAST:event_menItemNuevoAlbumActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,8 +392,53 @@ public class Spotify extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void abreVentana(){
+        jDialog1.setModal(true);
+        jDialog1.pack();
+        jDialog1.setLocationRelativeTo(this);
+        jDialog1.setVisible(true);
+    }
+    
+    private void abreVentana2(){
+        jDialog2.setModal(true);
+        jDialog2.pack();
+        jDialog2.setLocationRelativeTo(this);
+        jDialog2.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGuardarAlbum;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lblAlias;
+    private javax.swing.JLabel lblAliasProductor;
+    private javax.swing.JLabel lblDisquera;
+    private javax.swing.JLabel lblFechaAlbum;
+    private javax.swing.JLabel lblFormato;
+    private javax.swing.JLabel lblGenero;
+    private javax.swing.JLabel lblGeneroAlbum;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombreAlbum;
+    private javax.swing.JLabel lblNuevoAlbum;
+    private javax.swing.JLabel lblNuevoArtista;
+    private javax.swing.JLabel lblRegistro;
+    private javax.swing.JMenuItem menItemNuevoAlbum;
+    private javax.swing.JMenuItem menItemNuevoalbum;
+    private javax.swing.JTextField txtAliasArtista;
+    private javax.swing.JTextField txtAliasProdAlbum;
+    private javax.swing.JTextField txtDisqueraArtista;
+    private javax.swing.JTextField txtFechaAlbum;
+    private javax.swing.JTextField txtFormatoPublicacion;
+    private javax.swing.JTextField txtGeneroAlbum;
+    private javax.swing.JTextField txtGeneroArtista;
+    private javax.swing.JTextField txtNombreAlbum;
+    private javax.swing.JTextField txtNombreArtista;
+    private javax.swing.JTextField txtRegistoArtista;
+    private javax.swing.JButton vtnGuardarNuevoArtista;
     // End of variables declaration//GEN-END:variables
 }

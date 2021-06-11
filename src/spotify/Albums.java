@@ -10,7 +10,7 @@ public class Albums implements Serializable{
     
 //Atributos
     private String nombre;
-    private int publicacion;
+    private String publicacion;
     private String genero;
     private String formatoPublicacion;
     private String alias;
@@ -18,7 +18,7 @@ public class Albums implements Serializable{
     private static final long SerialVersionUID=777l;
     
     //Constructores
-        public Albums(String nombre, int publicacion, String genero, String formatoPublicacion, String alias) {
+        public Albums(String nombre, String publicacion, String genero, String formatoPublicacion, String alias) {
         this.nombre = nombre;
         this.publicacion = publicacion;
         this.genero = genero;
@@ -44,11 +44,11 @@ public class Albums implements Serializable{
         this.nombre = nombre;
     }
 
-    public int getPublicacion() {
+    public String getPublicacion() {
         return publicacion;
     }
 
-    public void setPublicacion(int publicacion) {
+    public void setPublicacion(String publicacion) {
         this.publicacion = publicacion;
     }
 

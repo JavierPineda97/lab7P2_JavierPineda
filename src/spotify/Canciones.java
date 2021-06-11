@@ -28,6 +28,10 @@ public class Canciones implements Serializable {
         this.nombreProductor = nombreProductor;
         this.nombreArtista = nombreArtista;
     }
+
+    Canciones(String showInputDialog, int cant) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     //Mutadores
     public String getNombre() {

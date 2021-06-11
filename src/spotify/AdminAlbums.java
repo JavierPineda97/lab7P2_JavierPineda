@@ -34,7 +34,7 @@ public class AdminAlbums {
         this.archivo = archivo;
     }
     
-    public void setArtista(Albums a){
+    public void setAlbums(Albums a){
         listaAlbums.add(a);
     }
     
