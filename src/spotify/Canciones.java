@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class Canciones implements Serializable {
     //Atributos
     private String nombre;
-    private int duracion;
+    private String duracion;
     private String nombreCompositor;
     private String nombreDistribuidor;
     private String nombreProductor;
@@ -20,7 +20,7 @@ public class Canciones implements Serializable {
     
 }
     
-        public Canciones(String nombre, int duracion, String nombreCompositor, String nombreDistribuidor, String nombreProductor, String nombreArtista) {
+        public Canciones(String nombre, String duracion, String nombreCompositor, String nombreDistribuidor, String nombreProductor, String nombreArtista) {
         this.nombre = nombre;
         this.duracion = duracion;
         this.nombreCompositor = nombreCompositor;
@@ -42,11 +42,11 @@ public class Canciones implements Serializable {
         this.nombre = nombre;
     }
 
-    public int getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 
