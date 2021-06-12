@@ -5,6 +5,7 @@
  */
 package spotify;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -44,6 +45,9 @@ public class Spotify extends javax.swing.JFrame {
         txtDisqueraArtista = new javax.swing.JTextField();
         txtAliasArtista = new javax.swing.JTextField();
         txtRegistoArtista = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jlistArtistas = new javax.swing.JList<>();
+        btnBorrarArtista = new javax.swing.JButton();
         jdNuevoAlbum = new javax.swing.JDialog();
         lblNuevoAlbum = new javax.swing.JLabel();
         lblNombreAlbum = new javax.swing.JLabel();
@@ -75,22 +79,6 @@ public class Spotify extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         lblArtitasLista = new javax.swing.JLabel();
         jdListaAlbums = new javax.swing.JDialog();
-        jdNuevaCancion = new javax.swing.JDialog();
-        lblNuevaCancion = new javax.swing.JLabel();
-        lblNombreCancion = new javax.swing.JLabel();
-        lblDuracionCancion = new javax.swing.JLabel();
-        lblNombreCompositorCancion = new javax.swing.JLabel();
-        lblNombreDistribuidorCancion = new javax.swing.JLabel();
-        lblNombreProductorCancion = new javax.swing.JLabel();
-        lblNombreArtistaInvitadoCancion = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        txtNombreCancion = new javax.swing.JTextField();
-        txtDuracionCancion = new javax.swing.JTextField();
-        txtxNombreCompositorCancion = new javax.swing.JTextField();
-        txtNombreDistribuidorNuevaCancion = new javax.swing.JTextField();
-        txtNombreProductorNuevaCancion = new javax.swing.JTextField();
-        txtNombreArtistaInvitadoNuevaCancion = new javax.swing.JTextField();
-        jdReproductor = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -123,6 +111,10 @@ public class Spotify extends javax.swing.JFrame {
 
         lblRegistro.setText("Registro:");
 
+        jScrollPane2.setViewportView(jlistArtistas);
+
+        btnBorrarArtista.setText("Borrar");
+
         javax.swing.GroupLayout jdNuevoArtistaLayout = new javax.swing.GroupLayout(jdNuevoArtista.getContentPane());
         jdNuevoArtista.getContentPane().setLayout(jdNuevoArtistaLayout);
         jdNuevoArtistaLayout.setHorizontalGroup(
@@ -134,7 +126,9 @@ public class Spotify extends javax.swing.JFrame {
                         .addComponent(lblNuevoArtista))
                     .addGroup(jdNuevoArtistaLayout.createSequentialGroup()
                         .addGap(77, 77, 77)
-                        .addComponent(vtnGuardarNuevoArtista))
+                        .addComponent(vtnGuardarNuevoArtista)
+                        .addGap(165, 165, 165)
+                        .addComponent(btnBorrarArtista))
                     .addGroup(jdNuevoArtistaLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,49 +136,62 @@ public class Spotify extends javax.swing.JFrame {
                                 .addComponent(lblRegistro)
                                 .addGap(77, 77, 77)
                                 .addComponent(txtRegistoArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jdNuevoArtistaLayout.createSequentialGroup()
-                                    .addComponent(lblDisquera)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtDisqueraArtista))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jdNuevoArtistaLayout.createSequentialGroup()
-                                    .addComponent(lblGenero)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtGeneroArtista))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jdNuevoArtistaLayout.createSequentialGroup()
-                                    .addComponent(lblNombre)
-                                    .addGap(49, 49, 49)
-                                    .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jdNuevoArtistaLayout.createSequentialGroup()
-                                .addComponent(lblAlias)
+                                .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jdNuevoArtistaLayout.createSequentialGroup()
+                                            .addComponent(lblDisquera)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(txtDisqueraArtista))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jdNuevoArtistaLayout.createSequentialGroup()
+                                            .addComponent(lblGenero)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(txtGeneroArtista))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jdNuevoArtistaLayout.createSequentialGroup()
+                                            .addComponent(lblNombre)
+                                            .addGap(49, 49, 49)
+                                            .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jdNuevoArtistaLayout.createSequentialGroup()
+                                        .addComponent(lblAlias)
+                                        .addGap(76, 76, 76)
+                                        .addComponent(txtAliasArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(76, 76, 76)
-                                .addComponent(txtAliasArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(347, Short.MAX_VALUE))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         jdNuevoArtistaLayout.setVerticalGroup(
             jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jdNuevoArtistaLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(lblNuevoArtista)
-                .addGap(44, 44, 44)
-                .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombre)
-                    .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
-                .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblGenero)
-                    .addComponent(txtGeneroArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDisquera)
-                    .addComponent(txtDisqueraArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
                 .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jdNuevoArtistaLayout.createSequentialGroup()
-                        .addComponent(lblAlias)
-                        .addGap(182, 182, 182)
-                        .addComponent(vtnGuardarNuevoArtista))
+                        .addGap(60, 60, 60)
+                        .addComponent(lblNuevoArtista)
+                        .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jdNuevoArtistaLayout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblNombre)
+                                    .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(57, 57, 57)
+                                .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblGenero)
+                                    .addComponent(txtGeneroArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(45, 45, 45)
+                                .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblDisquera)
+                                    .addComponent(txtDisqueraArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(48, 48, 48)
+                                .addComponent(lblAlias)
+                                .addGap(182, 182, 182)
+                                .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(vtnGuardarNuevoArtista)
+                                    .addComponent(btnBorrarArtista)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdNuevoArtistaLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(199, 199, 199))))
                     .addGroup(jdNuevoArtistaLayout.createSequentialGroup()
+                        .addGap(328, 328, 328)
                         .addComponent(txtAliasArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60)
                         .addGroup(jdNuevoArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -277,12 +284,6 @@ public class Spotify extends javax.swing.JFrame {
                 .addComponent(btnGuardarAlbum)
                 .addContainerGap(159, Short.MAX_VALUE))
         );
-
-        jdListaArtistas.addWindowStateListener(new java.awt.event.WindowStateListener() {
-            public void windowStateChanged(java.awt.event.WindowEvent evt) {
-                jdListaArtistasWindowStateChanged(evt);
-            }
-        });
 
         lblNombreArtistaLista.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblNombreArtistaLista.setText("Nombre:");
@@ -418,118 +419,6 @@ public class Spotify extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        lblNuevaCancion.setText("Nueva Cancion");
-
-        lblNombreCancion.setText("Nombre:");
-
-        lblDuracionCancion.setText("Duracion:");
-
-        lblNombreCompositorCancion.setText("Nombre del compositor:");
-
-        lblNombreDistribuidorCancion.setText("Nombre del distribuidor:");
-
-        lblNombreProductorCancion.setText("Nombre del productor:");
-
-        lblNombreArtistaInvitadoCancion.setText("Nombre del artista invitado:");
-
-        jButton1.setText("jButton1");
-
-        txtNombreCancion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreCancionActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jdNuevaCancionLayout = new javax.swing.GroupLayout(jdNuevaCancion.getContentPane());
-        jdNuevaCancion.getContentPane().setLayout(jdNuevaCancionLayout);
-        jdNuevaCancionLayout.setHorizontalGroup(
-            jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jdNuevaCancionLayout.createSequentialGroup()
-                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jdNuevaCancionLayout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(jButton1))
-                    .addGroup(jdNuevaCancionLayout.createSequentialGroup()
-                        .addGap(367, 367, 367)
-                        .addComponent(lblNuevaCancion))
-                    .addGroup(jdNuevaCancionLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jdNuevaCancionLayout.createSequentialGroup()
-                                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNombreCompositorCancion)
-                                    .addComponent(lblNombreDistribuidorCancion)
-                                    .addComponent(lblNombreProductorCancion)
-                                    .addComponent(lblNombreArtistaInvitadoCancion))
-                                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jdNuevaCancionLayout.createSequentialGroup()
-                                        .addGap(13, 13, 13)
-                                        .addComponent(txtxNombreCompositorCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdNuevaCancionLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtNombreProductorNuevaCancion, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                                            .addComponent(txtNombreArtistaInvitadoNuevaCancion)))))
-                            .addGroup(jdNuevaCancionLayout.createSequentialGroup()
-                                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNombreCancion)
-                                    .addComponent(lblDuracionCancion))
-                                .addGap(82, 82, 82)
-                                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDuracionCancion)
-                                    .addComponent(txtNombreCancion)))
-                            .addComponent(txtNombreDistribuidorNuevaCancion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(448, Short.MAX_VALUE))
-        );
-        jdNuevaCancionLayout.setVerticalGroup(
-            jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jdNuevaCancionLayout.createSequentialGroup()
-                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jdNuevaCancionLayout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNombreCancion)
-                            .addComponent(txtNombreCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdNuevaCancionLayout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(lblNuevaCancion)
-                        .addGap(117, 117, 117)))
-                .addGap(2, 2, 2)
-                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDuracionCancion)
-                    .addComponent(txtDuracionCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
-                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNombreCompositorCancion)
-                    .addComponent(txtxNombreCompositorCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombreDistribuidorCancion)
-                    .addComponent(txtNombreDistribuidorNuevaCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
-                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombreProductorCancion)
-                    .addComponent(txtNombreProductorNuevaCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(jdNuevaCancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombreArtistaInvitadoCancion)
-                    .addComponent(txtNombreArtistaInvitadoNuevaCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jdReproductorLayout = new javax.swing.GroupLayout(jdReproductor.getContentPane());
-        jdReproductor.getContentPane().setLayout(jdReproductorLayout);
-        jdReproductorLayout.setHorizontalGroup(
-            jdReproductorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jdReproductorLayout.setVerticalGroup(
-            jdReproductorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Spotify");
 
@@ -565,11 +454,6 @@ public class Spotify extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Listar");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
-            }
-        });
 
         menItemListaArtistas.setText("Artistas");
         menItemListaArtistas.addActionListener(new java.awt.event.ActionListener() {
@@ -627,7 +511,9 @@ public class Spotify extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void vtnGuardarNuevoArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vtnGuardarNuevoArtistaMouseClicked
-        // TODO add your handling code here:
+      jlistArtistas.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(jlistArtistas);
+        
         Artistas a = new Artistas(txtNombreArtista.getText(),txtGeneroArtista.getText(),txtDisqueraArtista.getText(),txtAliasArtista.getText(),txtRegistoArtista.getText());
         
         String op="s";
@@ -738,16 +624,6 @@ public class Spotify extends javax.swing.JFrame {
         }//fin changed
     }//GEN-LAST:event_cmbListaArtistasItemStateChanged
 
-    private void jdListaArtistasWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jdListaArtistasWindowStateChanged
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jdListaArtistasWindowStateChanged
-
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jMenu2ActionPerformed
-
     private void menItemListaAlbumsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemListaAlbumsActionPerformed
         // TODO add your handling code here:
         abreVentana4();
@@ -757,10 +633,6 @@ public class Spotify extends javax.swing.JFrame {
         // TODO add your handling code here:
         abreVentana();
     }//GEN-LAST:event_menItemNuevaCancionActionPerformed
-
-    private void txtNombreCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreCancionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreCancionActionPerformed
 
     private void jMenAbrirReproductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenAbrirReproductorActionPerformed
         // TODO add your handling code here:
@@ -840,10 +712,10 @@ public class Spotify extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBorrarArtista;
     private javax.swing.JButton btnGuardarAlbum;
     private javax.swing.JButton btnModificar;
     private javax.swing.JComboBox<String> cmbListaArtistas;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenAbrirReproductor;
     private javax.swing.JMenu jMenu1;
@@ -852,20 +724,19 @@ public class Spotify extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JDialog jdListaAlbums;
     private javax.swing.JDialog jdListaArtistas;
-    private javax.swing.JDialog jdNuevaCancion;
     private javax.swing.JDialog jdNuevoAlbum;
     private javax.swing.JDialog jdNuevoArtista;
-    private javax.swing.JDialog jdReproductor;
+    private javax.swing.JList<String> jlistArtistas;
     private javax.swing.JLabel lblAlias;
     private javax.swing.JLabel lblAliasArtistaLista;
     private javax.swing.JLabel lblAliasProductor;
     private javax.swing.JLabel lblArtitasLista;
     private javax.swing.JLabel lblDisquera;
-    private javax.swing.JLabel lblDuracionCancion;
     private javax.swing.JLabel lblFechaAlbum;
     private javax.swing.JLabel lblFormato;
     private javax.swing.JLabel lblGenero;
@@ -873,14 +744,8 @@ public class Spotify extends javax.swing.JFrame {
     private javax.swing.JLabel lblGeneroArtistaLista;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombreAlbum;
-    private javax.swing.JLabel lblNombreArtistaInvitadoCancion;
     private javax.swing.JLabel lblNombreArtistaLista;
-    private javax.swing.JLabel lblNombreCancion;
-    private javax.swing.JLabel lblNombreCompositorCancion;
     private javax.swing.JLabel lblNombreDisqueraArtistaLista;
-    private javax.swing.JLabel lblNombreDistribuidorCancion;
-    private javax.swing.JLabel lblNombreProductorCancion;
-    private javax.swing.JLabel lblNuevaCancion;
     private javax.swing.JLabel lblNuevoAlbum;
     private javax.swing.JLabel lblNuevoArtista;
     private javax.swing.JLabel lblRegistro;
@@ -894,7 +759,6 @@ public class Spotify extends javax.swing.JFrame {
     private javax.swing.JTextField txtAliasLista;
     private javax.swing.JTextField txtAliasProdAlbum;
     private javax.swing.JTextField txtDisqueraArtista;
-    private javax.swing.JTextField txtDuracionCancion;
     private javax.swing.JTextField txtFechaAlbum;
     private javax.swing.JTextField txtFormatoPublicacion;
     private javax.swing.JTextField txtGeneroAlbum;
@@ -902,15 +766,10 @@ public class Spotify extends javax.swing.JFrame {
     private javax.swing.JTextField txtGeneroArtistaLista;
     private javax.swing.JTextField txtNombreAlbum;
     private javax.swing.JTextField txtNombreArtista;
-    private javax.swing.JTextField txtNombreArtistaInvitadoNuevaCancion;
     private javax.swing.JTextField txtNombreArtistaLista;
-    private javax.swing.JTextField txtNombreCancion;
     private javax.swing.JTextField txtNombreDisqueraLista;
-    private javax.swing.JTextField txtNombreDistribuidorNuevaCancion;
-    private javax.swing.JTextField txtNombreProductorNuevaCancion;
     private javax.swing.JTextField txtRegistoArtista;
     private javax.swing.JTextField txtRegistroArtistaLista;
-    private javax.swing.JTextField txtxNombreCompositorCancion;
     private javax.swing.JButton vtnGuardarNuevoArtista;
     // End of variables declaration//GEN-END:variables
 int pos;
